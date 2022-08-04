@@ -1,4 +1,7 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+
+import 'TinderApp/TinderUiOne.dart';
 
 void main() {
   runApp(const MyApp());
@@ -37,7 +40,19 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const <Widget>[],
+          children: <Widget>[
+            MaterialButton(
+                onPressed: () {
+                  if (kDebugMode) {
+                    print('object');
+                  }
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => TinderAppUiOne()));
+                },
+                child: const Text("PRESS")),
+          ],
         ),
       ),
     );
